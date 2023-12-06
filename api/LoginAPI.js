@@ -10,7 +10,6 @@ module.exports = (req, res) => {
         if (user) {
             let cmp = bcrypt.compare(password, user.Password).then((match) => {
                 if (match) {
-                    // Keep a username role codeRoom in session
                     req.session.userId = user.Username
                     req.session.UniqueID = user._id
                     console.log(req.session.UniqueID)
@@ -24,7 +23,7 @@ module.exports = (req, res) => {
                 }
             })
         } else {
-            const Errors = "Server internal error";
+            const Errors = "Email or Password NOT FOUND";
             req.flash('loginError', Errors);
             return res.redirect('/login');
         }
