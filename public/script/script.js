@@ -25,7 +25,7 @@ function updateGameList(data) {
 }
 function fetchData() {
   $.ajax({
-    url: 'http://192.168.1.46:3000/api/fetch/status',
+    url: 'https://vote-game.vercel.app/api/fetch/status',
     method: 'GET',
     dataType: 'json',
     success: function(data) {
