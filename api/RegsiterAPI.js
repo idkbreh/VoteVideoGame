@@ -30,7 +30,6 @@ module.exports = (req, res) => {
                 console.log("Registration successful");
                 req.session.userId = username
                 req.session.UniqueID = newUser._id
-                console.log(req.session.UniqueID)
                 const Errors = "Login Successfully !";
                 req.flash('loginSuccess', Errors);
                 res.redirect('/');
