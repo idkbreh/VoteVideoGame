@@ -28,11 +28,11 @@ module.exports = (req, res) => {
             var vote_perms = 0
             const newUser = User.create({ Username: username, Email: email, Password: password ,Vote:vote_perms}).then(() => {
                 console.log("Registration successful");
-                req.session.userId = username
-                req.session.UniqueID = newUser._id
+                //req.session.userId = username
+                //req.session.UniqueID = newUser._id
                 const Errors = "Login Successfully !";
                 req.flash('loginSuccess', Errors);
-                res.redirect('/');
+                res.redirect('/login');
             }).catch((err) => {
                 console.log(err);
                 const Errors = "Server error";
